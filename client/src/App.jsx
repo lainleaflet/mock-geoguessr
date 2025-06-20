@@ -18,31 +18,6 @@ function App() {
       <div class = "map">
         <Map location = {location}/>
       </div>
-
-
-      {/* {location && (
-        <MapContainer
-          center = {[20, 0]}
-          zoom={5}
-          style={{ height: "300px" }}
-        >
-          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-
-          <MapClickHandler onGuess = {setGuess} />
-
-          {guess && (
-            <Marker position={guess}>
-              <Popup>Your guess</Popup>
-            </Marker>
-          )}
-
-          {location && (
-            <Marker position={[location.lat, location.lng]}>
-              <Popup>Actual Location</Popup>
-            </Marker>
-          )}
-        </MapContainer>
-      )} */}
     </div>
   )
 }
