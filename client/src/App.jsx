@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
 import axios from "axios"
-import {MapContainer, TileLayer, Marker, Popup} from "react-leaflet"
-import MapClickHandler from './MapClickHandler';
-import L from "leaflet";
+import Map from './Map';
+import './App.css'
 
 function App() {
   const [location, setLocation] = useState(null)
-  const [guess, setGuess] = useState(null)
 
   useEffect(() => {
     axios.get("http://127.0.0.1:5000/api/random-location")
@@ -17,11 +15,16 @@ function App() {
   return (
     <div>
       <h1>GeoGuessr Clone</h1>
-      {location && (
+      <div class = "map">
+        <Map location = {location}/>
+      </div>
+
+
+      {/* {location && (
         <MapContainer
           center = {[20, 0]}
           zoom={5}
-          style={{ height: "500px" }}
+          style={{ height: "300px" }}
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
@@ -39,7 +42,7 @@ function App() {
             </Marker>
           )}
         </MapContainer>
-      )}
+      )} */}
     </div>
   )
 }
