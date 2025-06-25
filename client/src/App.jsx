@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from "axios"
 import Map from './Map';
+import StreetView from './StreetView';
 import './App.css'
 
 function App() {
@@ -14,7 +15,10 @@ function App() {
 
   return (
     <div>
-      <h1>GeoGuessr Clone</h1>
+      {/* <h1>GeoGuessr Clone</h1> */}
+      {location && (
+          <StreetView location={location} />
+      )}
       <div class = "map">
         <Map location = {location}/>
       </div>
