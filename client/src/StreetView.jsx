@@ -9,22 +9,20 @@ const containerStyle = {
 
 function StreetView ({location}) {
     return (
-        <LoadScript googleMapsApiKey={API_KEY}>
-            <GoogleMap
-                mapContainerStyle={containerStyle}
-                center={location}
-                zoom={12}
-            >
-                <StreetViewPanorama
-                    position={location}
-                    visible={true}
-                    options={{
-                        disableDefaultUI: true,
-                        showRoadLabels: false
-                    }}
-                />
-            </GoogleMap>
-        </LoadScript>
+        <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={location}
+            zoom={12}
+        >
+            <StreetViewPanorama
+                position={location}
+                visible={true}
+                options={{
+                    disableDefaultUI: true,
+                    showRoadLabels: false
+                }}
+            />
+        </GoogleMap>
     )
 }
 
